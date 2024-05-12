@@ -1,5 +1,6 @@
 # dealii-Mixed-Mesh-Test
 dealii Mixed Mesh Test
+In oder to read mixed mesh, the DEALII_WITH_GMSH_API should be on 
 ```c++
 // correct oder 
 // : mapping(MappingFE<dim>(FE_PyramidP<dim>(degree)), MappingFE<dim>(FE_SimplexP<dim>(degree)), MappingFE<dim>(FE_Q<dim>(degree)))
