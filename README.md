@@ -37,3 +37,19 @@ for (const auto &cell : dof_handler.active_cell_iterators())
 }
 ```
 comment and uncomment this two parts.
+the output of correct oder (release mode) as follows:
+```
+Number of active cells: 11728
+Number of degrees of freedom: 15207
+DEAL:cg::Starting value 3.24343e+06
+DEAL:cg::Convergence step 287 value 0.0317760
+```
+the output of error oder (release mode) as follows:
+```
+Number of active cells: 11728
+Number of degrees of freedom: 20430
+DEAL:cg::Starting value 3.21878e+06
+DEAL:cg::Failure step 1000 value 4.64660e+13
+terminate called after throwing an instance of 'dealii::SolverControl::NoConvergence'
+```
+the correct dofs should be 15207.
