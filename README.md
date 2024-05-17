@@ -1,17 +1,17 @@
 # dealii-Mixed-Mesh-Test
-In oder to read mixed mesh, the DEALII_WITH_GMSH_API should be on 
+In order to read mixed mesh, the DEALII_WITH_GMSH_API should be on 
 ```c++
-// correct oder 
+// correct order 
 // : mapping(MappingFE<dim>(FE_PyramidP<dim>(degree)), MappingFE<dim>(FE_SimplexP<dim>(degree)), MappingFE<dim>(FE_Q<dim>(degree)))
 // , fe(FESystem<dim>(FE_PyramidP<dim>(degree)^3), FESystem<dim>(FE_SimplexP<dim>(degree)^3), FESystem<dim>(FE_Q<dim>(degree)^3))
 // , quadrature_formula(QGaussPyramid<dim>(degree + 1), QGaussSimplex<dim>(degree + 1), QGauss<dim>(degree + 1))
-// error oder
+// error order
 : mapping(MappingFE<dim>(FE_SimplexP<dim>(degree)), MappingFE<dim>(FE_PyramidP<dim>(degree)), MappingFE<dim>(FE_Q<dim>(degree)))
 , fe(FESystem<dim>(FE_SimplexP<dim>(degree)^3), FESystem<dim>(FE_PyramidP<dim>(degree)^3), FESystem<dim>(FE_Q<dim>(degree)^3))
 , quadrature_formula(QGaussSimplex<dim>(degree + 1), QGaussPyramid<dim>(degree + 1), QGauss<dim>(degree + 1))
 ```
 ```c++
-// correct oder
+// correct order
 // for (const auto &cell : dof_handler.active_cell_iterators())
 // {
 //   if (cell->reference_cell() == ReferenceCells::Pyramid)
@@ -23,7 +23,7 @@ In oder to read mixed mesh, the DEALII_WITH_GMSH_API should be on
 //   else
 //     Assert(false, ExcNotImplemented());
 // }
-// error oder
+// error order
 for (const auto &cell : dof_handler.active_cell_iterators())
 {
   if (cell->reference_cell() == ReferenceCells::Tetrahedron)
@@ -37,14 +37,14 @@ for (const auto &cell : dof_handler.active_cell_iterators())
 }
 ```
 comment and uncomment this two parts.
-the output of correct oder (release mode) as follows:
+the output of correct order (release mode) as follows:
 ```
 Number of active cells: 11728
 Number of degrees of freedom: 15207
 DEAL:cg::Starting value 3.24343e+06
 DEAL:cg::Convergence step 287 value 0.0317760
 ```
-the output of error oder (release mode) as follows:
+the output of error order (release mode) as follows:
 ```
 Number of active cells: 11728
 Number of degrees of freedom: 20430
