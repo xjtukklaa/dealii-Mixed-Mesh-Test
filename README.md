@@ -1,5 +1,5 @@
 # dealii-Mixed-Mesh-Test
-In order to read mixed mesh, the DEALII_WITH_GMSH_API should be on 
+In order to read mixed mesh, the DEAL_II_GMSH_WITH_API should be on 
 ```c++
 // correct order 
 // : mapping(MappingFE<dim>(FE_PyramidP<dim>(degree)), MappingFE<dim>(FE_SimplexP<dim>(degree)), MappingFE<dim>(FE_Q<dim>(degree)))
