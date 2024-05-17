@@ -213,3 +213,4 @@ FE_SimplexP<dim, spacedim>::compare_for_domination(
   return FiniteElementDomination::neither_element_dominates;
 }
 ```
+In fe_simplex_P.cc, the funciton--compare_for_domination won't check the pyramid cell type. this maybe the one reason for this problem. but i not very sure.
