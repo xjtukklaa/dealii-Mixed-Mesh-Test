@@ -224,13 +224,9 @@ void Mixed_Mesh::solve()
 void Mixed_Mesh::output_results()
 {
   DataOut<dim> data_out;
- 
-  DataOutBase::VtkFlags flags;
-  flags.write_higher_order_cells = true;
-  data_out.set_flags(flags);
   data_out.attach_dof_handler(dof_handler);
   data_out.add_data_vector(solution, "solution");
-  data_out.build_patches(mapping, 2);
+  data_out.build_patches(mapping);
   std::ofstream output("solution.vtk");
   data_out.write_vtk(output);
 }
