@@ -81,7 +81,11 @@ Stacktrace:
 #2  /home/zxl/workspace/dealii/deal.II-v9.5.2/lib/libdeal_II.g.so.9.5.2: dealii::hp::FECollection<3, 3>::find_dominating_fe(std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > const&, unsigned int) const
 ...
 ```
-
+correct order
+```c++
+Number of active cells: 11728
+Number of degrees of freedom: 15207
+```
 source/fe/fe_pyramid_p.cc<196>
 ```c++
 template <int dim, int spacedim>
